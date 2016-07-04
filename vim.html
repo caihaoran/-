@@ -1014,8 +1014,82 @@ body .markdown-body
     page-break-after: avoid;
   }
 }
-</style><title>README</title></head><body><article class="markdown-body"><h1 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>前端文档</h1>
-<h2 id="by"><a name="user-content-by" href="#by" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>by 蔡浩然</h2>
-<blockquote>
-<p>使用Sublime插件MarkdownPreview编写</p>
-</blockquote></article></body></html>
+</style><title>vim</title></head><body><article class="markdown-body"><h1 id="npm"><a name="user-content-npm" href="#npm" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>npm命令合集</h1>
+<div class="toc">
+<ul>
+<li><a href="#npm">npm命令合集</a><ul>
+<li><a href="#_1">命令历史</a></li>
+<li><a href="#vim">启动vim</a></li>
+<li><a href="#vim_1">vim的模式</a></li>
+<li><a href="#_2">插入命令</a></li>
+<li><a href="#_3">查找命令</a></li>
+<li><a href="#_4">替换命令</a></li>
+<li><a href="#_5">移动命令</a></li>
+<li><a href="#_6">撤销和重做</a></li>
+<li><a href="#_7">删除命令</a></li>
+<li><a href="#_8">拷贝和粘贴</a></li>
+<li><a href="#_9">剪切命令</a></li>
+<li><a href="#_10">退出命令</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>命令历史</h2>
+<p>以:和/开头的命令都有历史纪录，可以首先键入<code>:</code>或<code>/</code>然后按上下箭头来选择某个历史命令。</p>
+<h2 id="vim"><a name="user-content-vim" href="#vim" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>启动vim</h2>
+<p>在命令行窗口中输入以下命令即可<br />
+<code>vim</code> 直接启动vim<br />
+<code>vim filename</code> 打开vim并创建名为filename的文件</p>
+<h2 id="vim_1"><a name="user-content-vim_1" href="#vim_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>vim的模式</h2>
+<p>正常模式（按Esc或Ctrl+[进入） 左下角显示文件名或为空<br />
+插入模式（按i键进入） 左下角显示&ndash;INSERT&ndash;<br />
+可视模式（不知道如何进入） 左下角显示&ndash;VISUAL&ndash;</p>
+<h2 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>插入命令</h2>
+<p><code>i</code> 在当前位置生前插入</p>
+<p><code>I</code> 在当前行首插入</p>
+<p><code>a</code> 在当前位置后插入</p>
+<p><code>A</code> 在当前行尾插入</p>
+<p><code>o</code> 在当前行之后插入一行</p>
+<p><code>O</code> 在当前行之前插入一行</p>
+<h2 id="_3"><a name="user-content-_3" href="#_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>查找命令</h2>
+<p><code>/text</code>　　查找text，按n健查找下一个，按N健查找前一个。</p>
+<p><code>?text</code>　　查找text，反向查找，按n健查找下一个，按N健查找前一个。</p>
+<p>vim中有一些特殊字符在查找时需要转义　　.*[]^%/?~$</p>
+<h2 id="_4"><a name="user-content-_4" href="#_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>替换命令</h2>
+<p><code>ra</code> 将当前字符替换为a，当期字符即光标所在字符。</p>
+<p><code>s/old/new/</code> 用old替换new，替换当前行的第一个匹配</p>
+<p><code>s/old/new/g</code> 用old替换new，替换当前行的所有匹配</p>
+<p><code>%s/old/new/</code> 用old替换new，替换所有行的第一个匹配</p>
+<p><code>%s/old/new/g</code> 用old替换new，替换整个文件的所有匹配</p>
+<h2 id="_5"><a name="user-content-_5" href="#_5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>移动命令</h2>
+<p><code>h</code> 左移一个字符<br />
+<code>l</code> 右移一个字符，这个命令很少用，一般用w代替。<br />
+<code>k</code> 上移一个字符<br />
+<code>j</code> 下移一个字符<br />
+以上四个命令可以配合数字使用，比如20j就是向下移动20行，5h就是向左移动5个字符，在Vim中，很多命令都可以配合数字使用，比如删除10个字符10x，在当前位置后插入3个！，3a！<Esc>，这里的Esc是必须的，否则命令不生效。</p>
+<p><code>w</code> 向前移动一个单词（光标停在单词首部），如果已到行尾，则转至下一行行首。此命令快，可以代替l命令。</p>
+<p><code>b</code> 向后移动一个单词 2b 向后移动2个单词</p>
+<p><code>e</code>，同w，只不过是光标停在单词尾部</p>
+<h2 id="_6"><a name="user-content-_6" href="#_6" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>撤销和重做</h2>
+<p><code>u</code> 撤销（Undo）<br />
+<code>U</code> 撤销对整行的操作<br />
+<code>Ctrl + r</code> 重做（Redo），即撤销的撤销。</p>
+<h2 id="_7"><a name="user-content-_7" href="#_7" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>删除命令</h2>
+<p><code>x</code> 删除当前字符<br />
+<code>dd</code> 删除当前行<br />
+<code>10d</code> 删除当前行开始的10行。</p>
+<h2 id="_8"><a name="user-content-_8" href="#_8" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>拷贝和粘贴</h2>
+<p><code>yy</code> 拷贝当前行</p>
+<p><code>nyy</code> 拷贝当前后开始的n行，比如2yy拷贝当前行及其下一行。</p>
+<p><code>p</code>  在当前光标后粘贴,如果之前使用了yy命令来复制一行，那么就在当前行的下一行粘贴。</p>
+<p><code>shift+p</code> 在当前行前粘贴</p>
+<h2 id="_9"><a name="user-content-_9" href="#_9" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>剪切命令</h2>
+<p>正常模式下按v（逐字）或V（逐行）进入可视模式，然后用jklh命令移动即可选择某些行或字符，再按d即可剪切</p>
+<p><code>ndd</code> 剪切当前行之后的n行。利用p命令可以对剪切的内容进行粘贴</p>
+<p><code>:1,10d</code> 将1-10行剪切。利用p命令可将剪切后的内容进行粘贴。</p>
+<p><code>:1, 10 m 20</code> 将第1-10行移动到第20行之后。</p>
+<h2 id="_10"><a name="user-content-_10" href="#_10" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>退出命令</h2>
+<p><code>:wq</code> 保存并退出</p>
+<p><code>ZZ</code> 保存并退出</p>
+<p><code>:q!</code> 强制退出并忽略所有更改</p>
+<p><code>:e!</code> 放弃所有修改，并打开原来文件。</p></article></body></html>
