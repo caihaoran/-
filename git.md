@@ -1,4 +1,5 @@
 # git配置
+详细内容见git手册 https://git-scm.com/book/zh/v1/Git-%E5%9F%BA%E7%A1%80
 [TOC]
 ## 配置文件的存储位置
 这些变量可以被存储在三个不同的位置：
