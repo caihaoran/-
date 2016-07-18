@@ -103,3 +103,6 @@ resolve: {
 ```
 **webpack.config.js更详尽的配置:
 <http://webpack.github.io/docs/configuration.html>**
+##运行 
+webpack 的执行也很简单，直接执行 
+`$ webpack --display-error-details`
